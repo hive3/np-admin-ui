@@ -5,7 +5,7 @@ import InfoIcon from '@mui/icons-material/InfoOutlined';
 const BuildingPagination = () => <Pagination rowsPerPageOptions={[10, 25, 50, 100]} />;
 
 export const BuildingList = () => (
-    <List title={"NP Building Dashboard"} pagination={<BuildingPagination />} >
+    <List title={"PN Building Dashboard"} pagination={<BuildingPagination />} >
         <Datagrid expand={ <InterventionPanel /> } rowClick="show" >
             <TextField source="fid" />
             <TextField label="Building Id" source="buildingId" />
