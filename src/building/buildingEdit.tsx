@@ -26,7 +26,7 @@ export const BuildingEdit = () => (
                       <NumberInput source="fid" sx={{ width: 300 }} />
                       <Labeled>
                         <TextField source="buildingId" label="Building ID" validate={required()} sx={{ width: 500, ml: 3 }} resettable />
-                        </Labeled>
+                      </Labeled>
                       <NumberInput source="floors" sx={{ width: 150, ml: 3 }} defaultValue={0} min={0} max={50} />
                       <ReferenceInput source="ArchitectonicAdequacyId" reference="architectonic-adequacies" >
                         <SelectInput label="Architectonic Adequacy" source="ArchitectonicAdequacyId" optionText="description" validate={required()} sx={{ width: 300 }} resettable /> 
