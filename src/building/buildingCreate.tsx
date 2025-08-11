@@ -1,5 +1,9 @@
-import { CreateBase, NumberInput, ReferenceInput, SelectArrayInput, SelectInput, SimpleForm, TextInput, Title, required } from "react-admin";
+import { BooleanInput, CreateBase, NumberInput, ReferenceInput, SelectArrayInput, SelectInput, SimpleForm, TextInput, Title, required } from "react-admin";
 import { Card, CardContent, Container } from "@mui/material";
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+import { Labeled } from "react-admin";
+import { TextField } from "react-admin";
 
 export const BuildingCreate = () => (
     <CreateBase resource="buildings">
@@ -8,9 +12,25 @@ export const BuildingCreate = () => (
             <Card >
                 <CardContent>
                     <SimpleForm warnWhenUnsavedChanges spacing={{ ml: 2, xs: 43, sm: 2 }} direction="row" useFlexGap flexWrap="wrap" >
-                      <NumberInput source="fid" sx={{ width: 300 }} />
-                      <TextInput source="buildingId" label="Building ID" validate={required()} sx={{ width: 500, ml: 3 }} resettable />
-                      <NumberInput source="floors" sx={{ width: 150, ml: 3 }} defaultValue={0} min={0} max={50} />
+                      <NumberInput source="fid" sx={{ width: 120, mr: 3, ml: 2 }} />
+                      <TextInput source="buildingId" label="Building ID" validate={required()} sx={{ width: 150, ml: 1 }} resettable />
+                      <NumberInput source="floors" sx={{ width: 80, ml: 1 }} defaultValue={0} min={0} max={50} />
+                      <Stack spacing={{ xs: 5, sm: 2 }} useFlexGap sx={{ flexWrap: 'wrap', width: 180, ml: 11 }}>
+                        <Typography>Cultural Heritage</Typography>
+                        <Stack spacing={{ xs: 5, ml: 2, sm: 2 }} alignItems={'center'} direction={'row'} useFlexGap sx={{ flexWrap: 'wrap' }}>
+                          <Typography>NO</Typography>
+                          <BooleanInput source="isCulturalHeritage" label="" defaultValue={false} sx={{ height: 40, width: 60,  ml: 3}} />
+                          <Typography>YES</Typography>
+                        </Stack>
+                      </Stack>
+                      <Stack spacing={{ xs: 5, sm: 2 }} useFlexGap sx={{ flexWrap: 'wrap', width: 200, ml: 11 }}>
+                        <Typography>Culturally Significant Area</Typography>
+                        <Stack spacing={{ xs: 5, ml: 2, sm: 2 }} alignItems={'center'} direction={'row'} useFlexGap sx={{ flexWrap: 'wrap' }}>
+                          <Typography>NO</Typography>
+                          <BooleanInput source="isCulturallySignificantArea" label="" defaultValue={false} sx={{ height: 40, width: 60,  ml: 3}} />
+                          <Typography>YES</Typography>
+                        </Stack>
+                      </Stack>
                       <ReferenceInput source="ArchitectonicAdequacyId" reference="architectonic-adequacies" >
                         <SelectInput label="Architectonic Adequacy" source="ArchitectonicAdequacyId" optionText="description" validate={required()} sx={{ width: 300 }} resettable /> 
                       </ReferenceInput>

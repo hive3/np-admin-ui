@@ -1,4 +1,4 @@
-import { NumberField, Labeled, ShowBase, SimpleShowLayout, TextField, Title, ReferenceField, ArrayField, WithListContext, TopToolbar, DeleteButton, EditButton } from "react-admin";
+import { NumberField, Labeled, ShowBase, SimpleShowLayout, TextField, Title, ReferenceField, ArrayField, WithListContext, TopToolbar, DeleteButton, EditButton, BooleanField } from "react-admin";
 import { Card, Chip, CardContent, Container, Stack } from "@mui/material";
 import InfoIcon from '@mui/icons-material/InfoOutlined';
 
@@ -15,13 +15,19 @@ export const BuildingShow = () => (
                     <SimpleShowLayout >
                       <Stack spacing={{ ml: 2, xs: 43, sm: 5 }} direction="row" useFlexGap flexWrap="wrap" >
                         <Labeled>
-                          <NumberField source="fid" sx={{ width: 300 }} />
+                          <NumberField source="fid" sx={{ width: 100 }} />
                         </Labeled>
                         <Labeled sx={{ ml: 10 }}>
-                          <TextField source="buildingId" label="Building ID" sx={{ width: 300 }} />
+                          <TextField source="buildingId" label="Building ID" sx={{ width: 150 }} />
                         </Labeled>
                         <Labeled sx={{ ml: 10 }}>
-                          <NumberField source="floors" sx={{ width: 200 }} />
+                          <NumberField source="floors" sx={{ width: 80 }} />
+                        </Labeled>
+                        <Labeled sx={{ ml: 10 }}>
+                          <BooleanField source="isCulturalHeritage" label="Cultural Heritage" sx={{ width: 100 }} />
+                        </Labeled>
+                        <Labeled sx={{ ml: 10 }}>
+                          <BooleanField source="isCulturallySignificantArea" label="Culturally Significant Area" sx={{ width: 100 }} />
                         </Labeled>
                         <ReferenceField source="ArchitectonicAdequacyId" reference="architectonic-adequacies" >
                           <Labeled>
