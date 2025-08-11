@@ -2,8 +2,6 @@ import { BooleanInput, CreateBase, NumberInput, ReferenceInput, SelectArrayInput
 import { Card, CardContent, Container } from "@mui/material";
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import { Labeled } from "react-admin";
-import { TextField } from "react-admin";
 
 export const BuildingCreate = () => (
     <CreateBase resource="buildings">

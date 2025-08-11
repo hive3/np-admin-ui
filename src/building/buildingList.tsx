@@ -1,4 +1,4 @@
-import { List, Datagrid, Pagination, TextField, WithListContext, ArrayField, EditButton, DeleteWithConfirmButton } from "react-admin";
+import { List, Datagrid, Pagination, TextField, WithListContext, ArrayField, EditButton, FunctionField } from "react-admin";
 import { Chip, Stack } from '@mui/material';
 import InfoIcon from '@mui/icons-material/InfoOutlined';
 
@@ -10,8 +10,12 @@ export const BuildingList = () => (
             <TextField source="fid" />
             <TextField label="Building Id" source="buildingId" />
             <TextField source="floors" />
-            <TextField label="Cultural Heritage" source="isCulturalHeritage" />
-            <TextField label="Culturally Significant Area" source="isCulturallySignificantArea" />
+            <FunctionField label="Cultural Heritage" sortBy="isCulturalHeritage" source="isCulturalHeritage" render={
+                record => `${record?.isCulturalHeritage ? 'YES' : 'NO'}`
+            } />
+            <FunctionField label="Culturally Significant Area" sortBy="isCulturallySignificantArea" source="isCulturallySignificantArea" render={
+                record => `${record?.isCulturallySignificantArea ? 'YES' : 'NO'}`
+            } />
             <TextField label="Opening" sortBy="OpeningId" source="Opening.description" />
             <TextField label="Structural System" sortBy="StructuralSystemId" source="StructuralSystem.description" />
             <TextField label="Wall Covering" sortBy="WallCoveringId" source="WallCovering.description" />
