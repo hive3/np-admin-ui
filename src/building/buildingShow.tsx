@@ -77,9 +77,20 @@ export const BuildingShow = () => (
                         <Labeled>
                           <ArrayField label="Interventions" source="Interventions" perPage={6}>
                             <WithListContext render={({ data }) => (
-                              <Stack direction="row" spacing={{ ml: 2, xs: 43, sm: 5 }} useFlexGap flexWrap="wrap"  >
+                              <Stack direction="row" spacing={{ ml: 1, xs: 1, sm: 2 }} useFlexGap flexWrap="wrap"  >
                                 {data.map(intervention => (
                                   <Chip key={intervention.id} label={intervention.description} icon={<InfoIcon color="primary" />} color="primary" />
+                                ))}
+                              </Stack>
+                            )} />
+                          </ArrayField>
+                        </Labeled>
+                        <Labeled>
+                          <ArrayField label="Conservations" source="Conservations" perPage={6}>
+                            <WithListContext render={({ data }) => (
+                              <Stack direction="row" spacing={{ ml: 1, xs: 1, sm: 2 }} useFlexGap flexWrap="wrap"  >
+                                {data.map(conservation => (
+                                  <Chip key={conservation.id} label={conservation.description} icon={<InfoIcon color="secondary" />} color="secondary" />
                                 ))}
                               </Stack>
                             )} />

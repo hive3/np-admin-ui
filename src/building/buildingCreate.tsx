@@ -59,6 +59,9 @@ export const BuildingCreate = () => (
                       <ReferenceInput source="interventions" reference="interventions">
                         <SelectArrayInput fullWidth label="Interventions" source="interventions" optionText="description" /> 
                       </ReferenceInput>
+                      <ReferenceInput source="conservations" reference="conservations">
+                        <SelectArrayInput fullWidth label="Conservations" source="conservations" optionText="description" /> 
+                      </ReferenceInput>
                     </SimpleForm>
                 </CardContent>
             </Card>

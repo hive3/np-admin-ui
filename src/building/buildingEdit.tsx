@@ -3,7 +3,6 @@ import { Card, CardContent, Container } from "@mui/material";
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
-
 const InterventionsSelected = () => {
   const {isLoading, record} = useEditContext();
   if (isLoading) return null;
@@ -13,6 +12,18 @@ const InterventionsSelected = () => {
   }
   return <ReferenceInput source="interventions" reference="interventions">
             <SelectArrayInput fullWidth label="Interventions" source="interventions" optionText="description" /> 
+          </ReferenceInput>;
+};
+
+const ConservationsSelected = () => {
+  const {isLoading, record} = useEditContext();
+  if (isLoading) return null;
+  if (record || !record.Interventions) {
+    const conservationList = record.Conservations.map((i: any) => i.id);
+    record.conservations = conservationList;
+  }
+  return <ReferenceInput source="conservations" reference="conservations">
+            <SelectArrayInput fullWidth label="Conservations" source="conservations" optionText="description" /> 
           </ReferenceInput>;
 };
 
@@ -75,6 +86,7 @@ export const BuildingEdit = () => (
                         <SelectInput label="Use Type" source="UseTypeId" optionText="description" validate={required()} sx={{ width: 300, ml: 4 }} resettable /> 
                       </ReferenceInput>
                       <InterventionsSelected />
+                      <ConservationsSelected />
                     </SimpleForm>
                 </CardContent>
             </Card>

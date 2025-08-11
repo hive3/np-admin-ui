@@ -63,6 +63,13 @@ export const App = () => (
       edit={() => CommonEdit("interventions", "Interventions")}
     />
     <Resource
+      name="conservations"
+      list={ListGuesser}
+      show={ShowGuesser}
+      create={() => CommonCreate("conservations", "Conservations")}
+      edit={() => CommonEdit("conservations", "Conservations")}
+    />
+    <Resource
       name="openings"
       list={ListGuesser}
       show={ShowGuesser}

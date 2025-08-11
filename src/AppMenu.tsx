@@ -11,6 +11,7 @@ import RoofIcon from '@mui/icons-material/Roofing';
 import CategoryIcon from '@mui/icons-material/Category';
 import PlaceIcon from '@mui/icons-material/Cabin';
 import UseIcon from '@mui/icons-material/Store';
+import DomainDisabledIcon from '@mui/icons-material/DomainDisabled';
 
 export const AppMenu = () => (
     <Menu>
@@ -21,6 +22,7 @@ export const AppMenu = () => (
         <Menu.Item to="/current-states" primaryText="Current States" leftIcon={<CheckCircleIcon />} />
         <Menu.Item to="/facade-typologies" primaryText="Facade Typologies" leftIcon={<TypeIcon />} />
         <Menu.Item to="/interventions" primaryText="Interventions" leftIcon={<InfoIcon />} />
+        <Menu.Item to="/conservations" primaryText="Conservations" leftIcon={<DomainDisabledIcon />} />
         <Menu.Item to="/openings" primaryText="Openings" leftIcon={<MapIcon />} />
         <Menu.Item to="/roof-coverings" primaryText="Roof Coverings" leftIcon={<RoofIcon />} />
         <Menu.Item to="/structural-systems" primaryText="Structural Systems" leftIcon={<CategoryIcon />} />
