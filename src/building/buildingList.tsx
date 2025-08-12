@@ -32,18 +32,18 @@ export const BuildingList = () => (
 
 const ExpandPanelLayout = () => (
    <SimpleShowLayout>
-      <ArrayField label="Interventions" source="Interventions" perPage={6}>
+      <ArrayField label="Interventions" source="Interventions" perPage={3}>
         <WithListContext render={({ data }) => (
-          <Stack direction="row" spacing={1} >
+          <Stack direction="row" spacing={{ ml: 1, xs: 1, sm: 2 }} useFlexGap flexWrap="wrap"  >
             {data.map(intervention => (
               <Chip key={intervention.id} label={intervention.description} icon={<InfoIcon color="primary" />} color="primary" />
             ))}
           </Stack>
         )} />
       </ArrayField>
-      <ArrayField label="Conservations" source="Conservations" perPage={6}>
+      <ArrayField label="Conservations" source="Conservations" perPage={3}>
         <WithListContext render={({ data }) => (
-          <Stack direction="row" spacing={1} >
+          <Stack direction="row" spacing={{ ml: 1, xs: 1, sm: 2 }} useFlexGap flexWrap="wrap" >
             {data.map(conservation => (
               <Chip key={conservation.id} label={conservation.description} icon={<InfoIcon color="secondary" />} color="secondary" />
             ))}
