@@ -1,4 +1,4 @@
-import { BooleanInput, EditBase, Labeled, NumberInput, ReferenceInput, SelectArrayInput, SelectInput, ShowButton, SimpleForm, TextField, Title, TopToolbar, required, useEditContext } from "react-admin";
+import { BooleanInput, DeleteWithConfirmButton, EditBase, Labeled, NumberInput, ReferenceInput, SaveButton, SelectArrayInput, SelectInput, ShowButton, SimpleForm, TextField, Title, Toolbar, TopToolbar, required, useEditContext } from "react-admin";
 import { Card, CardContent, Container } from "@mui/material";
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -27,16 +27,24 @@ const ConservationsSelected = () => {
           </ReferenceInput>;
 };
 
+export const EditToolbar = () => (
+    <Toolbar>
+      <SaveButton />
+      <DeleteWithConfirmButton sx={{ ml: 100 }} />
+    </Toolbar>
+);
+
+
 export const BuildingEdit = () => (
     <EditBase resource="buildings" >
-        <TopToolbar sx={{ mr: 20 }} >
+        <TopToolbar sx={{ mr: 40 }} >
           <ShowButton />
         </TopToolbar>
         <Container >
             <Title title="Edit Building" />
             <Card >
-                <CardContent>
-                    <SimpleForm warnWhenUnsavedChanges spacing={{ ml: 2, xs: 43, sm: 2 }} direction="row" useFlexGap flexWrap="wrap" >
+                <CardContent >
+                    <SimpleForm warnWhenUnsavedChanges spacing={{ ml: 2, xs: 43, sm: 2 }} direction="row" useFlexGap flexWrap="wrap" toolbar={<EditToolbar />}>
                       <NumberInput source="fid" sx={{ width: 120, mr: 3, ml: 2 }} />
                       <Labeled>
                         <TextField source="buildingId" label="Building ID" validate={required()} sx={{ width: 150, ml: 1 }} resettable />

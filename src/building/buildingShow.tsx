@@ -1,4 +1,4 @@
-import { NumberField, Labeled, ShowBase, SimpleShowLayout, TextField, Title, ReferenceField, ArrayField, WithListContext, TopToolbar, DeleteButton, EditButton, BooleanField } from "react-admin";
+import { NumberField, Labeled, ShowBase, SimpleShowLayout, TextField, Title, ReferenceField, ArrayField, WithListContext, TopToolbar, EditButton, BooleanField, DeleteWithConfirmButton } from "react-admin";
 import { Card, Chip, CardContent, Container, Stack } from "@mui/material";
 import InfoIcon from '@mui/icons-material/InfoOutlined';
 
@@ -7,7 +7,7 @@ export const BuildingShow = () => (
         <Container>
           <TopToolbar >
             <EditButton />
-            <DeleteButton />
+            <DeleteWithConfirmButton />
           </TopToolbar>
           <Title title="Show Building" />
             <Card>
