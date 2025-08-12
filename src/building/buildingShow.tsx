@@ -15,19 +15,22 @@ export const BuildingShow = () => (
                     <SimpleShowLayout >
                       <Stack spacing={{ ml: 2, xs: 43, sm: 5 }} direction="row" useFlexGap flexWrap="wrap" >
                         <Labeled>
-                          <NumberField source="fid" sx={{ width: 100 }} />
+                          <NumberField source="fid" sx={{ width: 50 }} />
                         </Labeled>
                         <Labeled sx={{ ml: 10 }}>
-                          <TextField source="buildingId" label="Building ID" sx={{ width: 150 }} />
+                          <TextField source="buildingId" label="Building ID" sx={{ width: 100 }} />
                         </Labeled>
                         <Labeled sx={{ ml: 10 }}>
-                          <NumberField source="floors" sx={{ width: 80 }} />
+                          <NumberField source="floors" sx={{ width: 40 }} />
                         </Labeled>
                         <Labeled sx={{ ml: 10 }}>
-                          <BooleanField source="isCulturalHeritage" label="Cultural Heritage" sx={{ width: 100 }} />
+                          <NumberField source="index" options={{ maximumFractionDigits: 2 }} sx={{ width: 40 }} />
                         </Labeled>
                         <Labeled sx={{ ml: 10 }}>
-                          <BooleanField source="isCulturallySignificantArea" label="Culturally Significant Area" sx={{ width: 100 }} />
+                          <BooleanField source="isCulturalHeritage" label="Cultural Heritage" sx={{ width: 70 }} />
+                        </Labeled>
+                        <Labeled sx={{ ml: 10 }}>
+                          <BooleanField source="isCulturallySignificantArea" label="Culturally Significant Area" sx={{ width: 70 }} />
                         </Labeled>
                         <ReferenceField source="ArchitectonicAdequacyId" reference="architectonic-adequacies" >
                           <Labeled>

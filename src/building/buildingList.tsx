@@ -10,6 +10,7 @@ export const BuildingList = () => (
             <TextField source="fid" />
             <TextField label="Building Id" source="buildingId" />
             <TextField source="floors" />
+            <TextField source="index" />
             <FunctionField label="Cultural Heritage" sortBy="isCulturalHeritage" source="isCulturalHeritage" render={
                 record => `${record?.isCulturalHeritage ? 'YES' : 'NO'}`
             } />

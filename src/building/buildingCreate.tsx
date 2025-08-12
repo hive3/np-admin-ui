@@ -12,20 +12,21 @@ export const BuildingCreate = () => (
                     <SimpleForm warnWhenUnsavedChanges spacing={{ ml: 2, xs: 43, sm: 2 }} direction="row" useFlexGap flexWrap="wrap" >
                       <NumberInput source="fid" sx={{ width: 120, mr: 3, ml: 2 }} />
                       <TextInput source="buildingId" label="Building ID" validate={required()} sx={{ width: 150, ml: 1 }} resettable />
-                      <NumberInput source="floors" sx={{ width: 80, ml: 1 }} defaultValue={0} min={0} max={50} />
-                      <Stack spacing={{ xs: 5, sm: 2 }} useFlexGap sx={{ flexWrap: 'wrap', width: 180, ml: 11 }}>
+                      <NumberInput source="floors" sx={{ width: 80, ml: 3 }} defaultValue={0} min={0} max={50} />
+                      <NumberInput source="index" sx={{ width: 80, ml: 3 }} defaultValue={0.00} min={0} max={50} />
+                      <Stack spacing={{ xs: 5, sm: 2 }} useFlexGap sx={{ flexWrap: 'wrap', width: 180, ml: 5 }}>
                         <Typography>Cultural Heritage</Typography>
                         <Stack spacing={{ xs: 5, ml: 2, sm: 2 }} alignItems={'center'} direction={'row'} useFlexGap sx={{ flexWrap: 'wrap' }}>
                           <Typography>NO</Typography>
-                          <BooleanInput source="isCulturalHeritage" label="" defaultValue={false} sx={{ height: 40, width: 60,  ml: 3}} />
+                          <BooleanInput source="isCulturalHeritage" label="" defaultValue={false} sx={{ height: 40, width: 40,  ml: 1}} />
                           <Typography>YES</Typography>
                         </Stack>
                       </Stack>
-                      <Stack spacing={{ xs: 5, sm: 2 }} useFlexGap sx={{ flexWrap: 'wrap', width: 200, ml: 11 }}>
+                      <Stack spacing={{ xs: 5, sm: 2 }} useFlexGap sx={{ flexWrap: 'wrap', width: 190, ml: 2 }}>
                         <Typography>Culturally Significant Area</Typography>
                         <Stack spacing={{ xs: 5, ml: 2, sm: 2 }} alignItems={'center'} direction={'row'} useFlexGap sx={{ flexWrap: 'wrap' }}>
                           <Typography>NO</Typography>
-                          <BooleanInput source="isCulturallySignificantArea" label="" defaultValue={false} sx={{ height: 40, width: 60,  ml: 3}} />
+                          <BooleanInput source="isCulturallySignificantArea" label="" defaultValue={false} sx={{ height: 40, width: 40,  ml: 1}} />
                           <Typography>YES</Typography>
                         </Stack>
                       </Stack>
